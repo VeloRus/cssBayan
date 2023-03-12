@@ -1,5 +1,177 @@
+html {
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+  background-color: #15170e;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: .5s ease;
+}
+
+.wrapper  {
+  cursor: pointer;
+  width: 40%;
+  background-color: #374030;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1em;
+}
+
+.title {
+  font-size: 1.8rem;
+  color: #ffffff;
+  padding: 1%;
+}
+
+.mems {
+  width: 100%;
+}
+
+.picture {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+input:checked ~ .picture {
+  width: 50vh;
+  height: auto;
+  display: block;
+  padding: 1%;
+  margin: 0 auto;
+  opacity: 1;
+} 
+
+.arrow {
+  width: 5%;
+  height: auto;
+  opacity: 0;
+ 
+}
+
+.wrapper:hover .arrow {
+  display: inline-block;
+  opacity: 1;
+}
+
+.mem_title {
+  font-size: 1.6rem;
+}
+
+.mem_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2%;
+  color: #fdc314;
+}
+
+.wrapper:hover .mem_title {
+  color: #ffffff;
+  transition: .5s;
+}
+
+.wrapper:hover .title {
+  color: #fdc314;
+  transition: .5s;
+}
+
+label:hover .picture  {
+  width: 50vh;
+  height: auto;
+  display: block;
+  opacity: 1;
+  transition: 1s;
+  padding: 1%;
+  margin: 0 auto;
+}
+
+.label {
+  cursor: pointer;
+}
+
+.label:hover .arrow {
+  transition: 0s;
+  transform: rotate(45deg);
+}
+
+input {
+  display: none;
+}
+
+.mem1 {  
+  background-image: url("img/number_1.jpg");
+}
+
+.mem2 {
+  background-image: url("img/number_2.jpg");
+}
+
+.mem3 {
+  background-image: url("img/number_3.jpg");
+}
+
+.mem4 {
+  background-image: url("img/number_4.jpg");
+}
+
+.mem5 {
+  background-image: url("img/number_5.jpg");
+}
+
+
+
+
+
+@media (min-width: 600px) and (max-width: 1020px) {
+  .wrapper {
+    width: 70%;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .mem_title {
+    font-size: 1.6rem;
+  }
+
+  .label:hover .picture  {
+    width: 60%;;
+  }
+
+  input:checked ~ .picture {
+    width: 60%;;
+  }
+}
+
+
+
+
+
+@media (min-width: 300px) and (max-width: 599px) {
+  .wrapper {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 1.2em;
+  }
+
+  .mem_title {
+    font-size: 1rem;
+  }
+
+  .label:hover .picture  {
+    width: 70%;;
+  }
+
+  input:checked ~ .picture {
+    width: 70%;;
+  }
 }
