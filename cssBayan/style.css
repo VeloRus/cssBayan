@@ -12,7 +12,6 @@ html {
 }
 
 .wrapper  {
-  cursor: pointer;
   width: 40%;
   background-color: #374030;
   margin: 0 auto;
@@ -47,16 +46,19 @@ input:checked ~ .picture {
   opacity: 1;
 } 
 
-.arrow {
-  width: 5%;
-  height: auto;
+.icon {
+  display: block;
+  background-image: url("img/icon.png");
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 5vh;
+  height: 5vh;
   opacity: 0;
- 
 }
 
-.wrapper:hover .arrow {
-  display: inline-block;
-  opacity: 1;
+input:checked ~ div > .icon {
+  background-image: url("img/icon_close.png");
 }
 
 .mem_title {
@@ -69,30 +71,6 @@ input:checked ~ .picture {
   align-items: center;
   padding: 2%;
   color: #fdc314;
-}
-
-.wrapper:hover .mem_title {
-  color: #ffffff;
-  transition: .5s;
-}
-
-.wrapper:hover .title {
-  color: #fdc314;
-  transition: .5s;
-}
-
-label:hover .picture  {
-  width: 50vh;
-  height: auto;
-  display: block;
-  opacity: 1;
-  transition: 1s;
-  padding: 1%;
-  margin: 0 auto;
-}
-
-.label {
-  cursor: pointer;
 }
 
 .label:hover .arrow {
@@ -128,6 +106,55 @@ input {
 
 
 
+@media (min-width: 1021px) {
+  .wrapper  {
+    cursor: pointer;
+  }
+
+  .wrapper:hover .mem_title {
+    color: #ffffff;
+    transition: .5s;
+  }
+  
+  .wrapper:hover .title {
+    color: #fdc314;
+    transition: .5s;
+  }
+
+  .wrapper:hover .arrow {
+    display: inline-block;
+    opacity: 1;
+  }
+
+  .wrapper:hover .icon {
+    display: inline-block;
+    opacity: 1;
+  }
+
+  label:hover .icon {
+    background-image: url("img/icon_close.png");
+    opacity: 1;
+  }
+  
+  label:hover .picture  {
+    width: 50vh;
+    height: auto;
+    display: block;
+    opacity: 1;
+    transition: 1s;
+    padding: 1%;
+    margin: 0 auto;
+  }
+  
+  .label {
+    cursor: pointer;
+  }
+}
+
+
+
+
+
 @media (min-width: 600px) and (max-width: 1020px) {
   .wrapper {
     width: 70%;
@@ -147,6 +174,14 @@ input {
 
   input:checked ~ .picture {
     width: 60%;;
+  }
+
+  input:checked ~ img.arrow {
+    transform: rotate(45deg);
+  } 
+
+  .icon {
+    opacity: 1;
   }
 }
 
@@ -173,5 +208,9 @@ input {
 
   input:checked ~ .picture {
     width: 70%;;
+  }
+
+  .icon {
+    opacity: 1;
   }
 }
